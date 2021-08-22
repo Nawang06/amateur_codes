@@ -36,10 +36,7 @@ while guess < 36:
             guess += 1
     if guess == 36 or answer_state == "Exit":
         # pen.write("GAME OVER!!!!!")
-        missed_out_states = []
-        for state in states_list:
-            if state not in already_guessed:
-                missed_out_states.append(state)
+        missed_out_states = [state for state in states_list if state not in already_guessed]
         missed_out_dict = {
             "States": missed_out_states
         }
